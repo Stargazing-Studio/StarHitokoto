@@ -1,0 +1,50 @@
+# StarHitokoto 配置
+
+# 是否启用调试模式（开启后会在控制台显示更多运行信息）
+debug: false
+
+# 一言API地址
+api:
+  url: "https://v1.hitokoto.cn/?c=f&encode=text"
+  
+# 缓存设置（毫秒）
+cache:
+  time: 60000  # 1分钟
+  
+# 更新间隔（单位：tick，20 tick = 1秒）
+update:
+  interval: 1200  # 1分钟（20 ticks * 60秒）
+
+# 分行设置
+line:
+  # 每行最大字符数
+  max-chars: 8
+  # 是否在每行添加颜色代码前缀（有助于在TAB侧边栏中正确显示）
+  add-color-prefix: true
+
+# 消息设置
+message:
+  # 玩家加入服务器时发送一言
+  join:
+    enabled: true
+    # 消息格式 (%player% 为玩家名称, %hitokoto% 为一言内容)
+    format: "&e欢迎 &b%player% &e加入服务器! &7今日一言: &f%hitokoto%"
+    # 是否显示Title欢迎玩家
+    title:
+      enabled: true
+      # 大标题内容
+      title: "&b欢迎 %player% 加入服务器"
+      # 小标题内容（一言）
+      subtitle: "&7%hitokoto%"
+      # 淡入时间（tick）
+      fade-in: 10
+      # 停留时间（tick）
+      stay: 70
+      # 淡出时间（tick）
+      fade-out: 20
+  
+  # 玩家死亡时发送一言
+  death:
+    enabled: true
+    # 消息格式 (%player% 为玩家名称, %hitokoto% 为一言内容)
+    format: "&c%player% &7已死亡. &7死亡感言: &f%hitokoto%"

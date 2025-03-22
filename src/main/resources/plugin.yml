@@ -1,0 +1,52 @@
+name: StarHitokoto
+version: '1.0'
+main: com.xinglingqaq.StarHitokoto
+api-version: '1.21'
+depend: [PlaceholderAPI]
+description: 从一言API获取句子并通过PlaceholderAPI提供变量的插件
+author: Hitokoto
+
+commands:
+  hitokoto:
+    description: 显示或刷新一言
+    usage: /<command> [refresh|debug|config|reload|test]
+    aliases: [hito]
+    permission: hitokoto.use
+
+permissions:
+  hitokoto.use:
+    description: 允许使用基本一言命令
+    default: true
+  hitokoto.refresh:
+    description: 允许刷新一言句子
+    default: op
+  hitokoto.debug:
+    description: 允许查看一言调试信息
+    default: op
+  hitokoto.config:
+    description: 允许查看一言配置信息
+    default: op
+  hitokoto.reload:
+    description: 允许重载一言插件配置
+    default: op
+  hitokoto.test.join:
+    description: 允许测试玩家加入消息
+    default: op
+  hitokoto.test.death:
+    description: 允许测试玩家死亡消息
+    default: op
+  hitokoto.test.title:
+    description: 允许测试玩家加入标题
+    default: op
+  hitokoto.admin:
+    description: 允许使用所有一言插件功能
+    default: op
+    children:
+      hitokoto.use: true
+      hitokoto.refresh: true
+      hitokoto.debug: true
+      hitokoto.config: true
+      hitokoto.reload: true
+      hitokoto.test.join: true
+      hitokoto.test.death: true
+      hitokoto.test.title: true
